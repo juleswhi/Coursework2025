@@ -13,5 +13,3 @@ internal class User
     public Option<(string First, string Last)> Name { get; set; } 
     public UserLevel Level { get; set; }
 }
-
-
