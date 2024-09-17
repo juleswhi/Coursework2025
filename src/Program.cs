@@ -1,15 +1,5 @@
-global using System;
-global using System.Collections.Generic;
-global using System.Linq;
-global using System.Text;
-global using System.Threading.Tasks;
-
 global using LanguageExt;
-global using LanguageExt.Common;
-global using LanguageExt.Effects;
-global using LanguageExt.Pipes;
-global using LanguageExt.Pretty;
-global using static LanguageExt.Prelude;
+global using System;
 
 namespace SSD_Coursework;
 
