@@ -1,4 +1,6 @@
-﻿namespace SSD_Coursework;
+namespace SSD_Coursework;
+
+//Should write to AppData/MoversAdmin/Logs/Date.log
 
 internal static class Log
 {
@@ -33,7 +35,7 @@ internal static class Log
 
     private static void WriteErrFile(string s)
     {
-        File.AppendAllText();
+        File.AppendAllText(Path.Combine(Directory.SpecialFolder.ApplicationData.ToString(), "logs", $"now.log"), s);
     }
 
     public static void Debug(this string message)
