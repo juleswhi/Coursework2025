@@ -26,7 +26,14 @@ internal static class Log
         switch (Location)
         {
             case LogLocation.Debug: System.Diagnostics.Debug.Print(print()); break;
+            case LogLocation.File: System.Diagnostics.Debug.Print(print());  break;
+            case LogLocation.DebugFile: System.Diagnostics.Debug.Print(print()); break;
         };
+    }
+
+    private static void WriteErrFile(string s)
+    {
+        File.AppendAllText();
     }
 
     public static void Debug(this string message)
