@@ -11,6 +11,7 @@ internal static class Program
         ApplicationConfiguration.Initialize();
         Log.Location = Log.LogLocation.DebugFile;
         Log.Level = Log.LogLevel.DEBUG;
+        new DAL();
         Application.Run(new MainMenu());
     }
 }
