@@ -19,12 +19,12 @@ internal static class Log
         ERROR,
         FATAL,
     }
+
+    private static readonly LogDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), @"AppData\\Local\\MoversAdmin\\Logs");
+
     static Log()
     {
-        var userprofile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        var path = Path.Combine(userprofile, @"AppData\\Local\\MoversAdmin\\logs");
-
-        Directory.CreateDirectory(path);
+        Directory.CreateDirectory(LogDirectory);
 
         "Log File Found".Debug();
     }
@@ -44,16 +44,13 @@ internal static class Log
 
     public static void ClearLogFile()
     {
-        var userprofile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        var path = Path.Combine(userprofile, @"AppData\\Local\\MoversAdmin\\logs");
+        
     }
 
     private static void WriteErrFile(string s)
     {
-        var userprofile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        var path = Path.Combine(userprofile, @"AppData\\Local\\MoversAdmin\\logs");
-
-        File.AppendAllText(Path.Combine(path, "log.txt"), s+"\n");
+        
+        File.AppendAllText(Path.Combine(LogDirectory, "log.txt"), s + "\n");
     }
 
     public static void Debug(this string message)
